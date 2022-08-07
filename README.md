@@ -1,4 +1,4 @@
-# timick-front
+# TheTimickRus-Front
 
 ## Project setup
 ```

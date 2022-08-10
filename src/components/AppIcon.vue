@@ -127,6 +127,13 @@
      9.288-6.35-1.988c-1.381-0.431-1.406-1.381 0.288-2.044l24.837-9.569c1.15-0.431 2.156 0.256 1.781 2.013z"
       />
     </svg>
+    <svg v-if="this.name === 'logo'"  viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2.1138" y="-0.0140072" width="18.0971" height="18.0951" rx="2.5" transform="matrix(0.699899 -0.714242 0.709303 0.704904 15.9903 31.8165)" stroke="#A4A4A4" stroke-width="3"/>
+      <rect x="2.1138" y="-0.0140072" width="18.0971" height="18.0951" rx="2.5" transform="matrix(0.699899 -0.714242 0.709303 0.704904 15.5699 46.6356)" stroke="#A4A4A4" stroke-width="3"/>
+      <rect x="2.1138" y="-0.0140072" width="18.0971" height="18.0951" rx="2.5" transform="matrix(0.699899 -0.714242 0.709303 0.704904 0.644412 31.3932)" stroke="#A4A4A4" stroke-width="3"/>
+      <rect x="2.1138" y="-0.0140072" width="18.0971" height="18.0951" rx="2.5" transform="matrix(0.699899 -0.714242 0.709303 0.704904 15.9903 16.5741)" stroke="#A4A4A4" stroke-width="3"/>
+      <rect x="2.1138" y="-0.0140072" width="18.0971" height="18.0951" rx="2.5" transform="matrix(0.699899 -0.714242 0.709303 0.704904 30.9158 31.8165)" stroke="#A4A4A4" stroke-width="3"/>
+    </svg>
   </div>
 
 

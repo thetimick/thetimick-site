@@ -4,11 +4,9 @@
 
 * {
   color: #A4A4A4;
-  color: black;
 }
 .full-background {
   background: #1E1E1E;
-  background-color: white;
 }
 * > .section:first-child  {
   position: relative;

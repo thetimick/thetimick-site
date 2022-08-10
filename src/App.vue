@@ -130,7 +130,7 @@
               Когда я закончил университет, то устроился работать уже по специальности: разработчиком IOS приложений в компанию BeApps. Отдельное спасибо Вам, ребята, что взяли меня совсем без опыта, научили многому и ждете (надеюсь) уже 10 месяцев. Надеюсь, я смогу пригодиться, ахахах.
             </div>
           </div>
-          <div class="h-64 md:h-[320px] flex-auto shrink-0 w-[460px]  object-cover" >
+          <div class="h-64 md:h-[320px] flex-auto shrink-0 w-full  object-cover" >
             <img src="./assets/img/backend.jpg" class="object-cover h-full w-full ">
           </div>
         </div>

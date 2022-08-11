@@ -16,13 +16,28 @@ export default {
   components: {},
   data() {
     return {
+
     }
   },
   props: {
-    project: {
-      Object
+    id: {
+      String
     }
-  }
+  },
+   async created () {
+    let fetchApi = await fetch('http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchProjects',
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }
+
+    )
+     let response = fetchApi.json()
+     console.log('response',response)
+  },
+
 }
 </script>
 

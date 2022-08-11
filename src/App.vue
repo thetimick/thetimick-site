@@ -2,7 +2,7 @@
   <div class="w-full relative full-background min-h-screen"> <!-- Вся ширина-->
     <div class="absolute bg-black z-20 h-screen w-full opacity-50"></div> <!--Закрашивание-->
     <AppIcon class="absolute"/>
-    <div class="z-40 blur"></div>
+    <div class="z-10 blur"></div>
     <header
       class="justify-center lg:justify-end md:px-16 gap-2 px-1 w-full z-50">
 
@@ -38,10 +38,10 @@
       <div id="main" class="section h-screen pt-4 z-30" > <!--секция тут менять прозначность -->
         <div class="flex justify-center items-center h-full">
           <div class="flex flex-col gap-6 items-center">
-            <img src="./assets/img/main-avatar.jpg" class="h-40 w-40 rounded-full object-cover" >
-            <div class="text-4xl font-bold  whitespace-nowrap">Андрей Тимофеев</div>
+            <img src="./assets/img/main-avatar.jpg" class="h-40 w-40 lg:w-52 lg:h-52 rounded-full object-cover" >
+            <div class="text-4xl font-bold whitespace-nowrap">Андрей Тимофеев</div>
             <div class="text-2xl ">Более чем программист</div>
-            <div class="relative group py-5 px-7 bg-transparent gap-4 md:gap-12"> <!-- SocialNavigation -->
+            <div class="relative group py-3 px-1 md:px-7 bg-transparent gap-4 md:gap-12"> <!-- SocialNavigation -->
               <div class="-z-20 blur"></div>
               <AppIcon
                   name="instagram"
@@ -81,7 +81,7 @@
               @click="projectSwitchCode"
             >
               <span
-                class="text-base font-semibold md:text-lg"
+                class="text-base font-semibold md:text-xl"
                 :class="{'border-b':projectCode}"
               >
               Программирование
@@ -92,7 +92,7 @@
               @click="projectSwitchMusic"
             >
               <span
-                class="text-base md:text-lg"
+                class="text-base font-semibold md:text-xl"
                 :class="{'border-b':projectMusic}"
                 @click="projectSwitchMusic"
               >
@@ -101,9 +101,7 @@
             </div>
           </div>
         </div>
-        <div v-if="projectMusic" class="flex-initial py-14 flex flex-col gap-4 px-10">
-          <ProductMusic/>
-          <ProductMusic/>
+        <div v-if="projectMusic" class="flex flex-col items-center w-full h-full gap-4 px-2 xl:px-12 md:py-14">
           <ProductMusic/>
         </div>
         <div v-if="projectCode" class="flex flex-col items-center w-full h-full gap-4 px-2 xl:px-12 md:py-14">
@@ -113,15 +111,41 @@
         </div>
       </div>
 
-      <div id="about" class="section px-6 mt-8 flex flex-col">  <!--секция-->
-        <div class="flex flex-col">
-          <div class="">
-            <div class="text-3xl lg:text-5xl">Кто я?</div>
-            <div class=" indent-3 text-sm lg:text-2xl">
+      <div id="about" class="section px-6 mt-8 flex gap-12 flex-col">  <!--секция-->
+        <div class="flex flex-col lg:items-center lg:flex-row lg:gap-8">
+            <div class="lg:flex-[3,3,0%]">
+              <div class="text-3xl mb-6 lg:text-5xl">Кто я?</div>
+              <div class="indent-3 text-sm md:text-base lg:text-2xl">
+                Меня, как Вы уже поняли по первой странице, зовут Андрей Тимофеев. Я родился и вырос в небольшом городке Тверской области под названием Удомля. Там же я закончил школу и перебрался в Тверь, где закончил ТвГУ на факультете ПМиК.
+              </div>
+              <div class="text-sm lg:text-2xl">
+                Несмотря на все трудности учебы, это время я считаю лучшим в своей жизни. За время обучения я вырос (и не только физически), нашел много крутых ребят и свою любовь.
+              </div>
+              <div class="h-64 h-[300px] md:h-[400px] lg:hidden my-12 flex-auto shrink-0 object-cover" >
+                <img src="./assets/img/andrey.jpg" class="object-cover h-full w-full ">
+              </div>
+              <div class="text-sm lg:text-2xl">
+                За время учебы я успел поработать в Колл-Центре, на складе Озон’а, сервисном центре. Отдельное упоминание стоит отдать сервису Delivery Club, в который я устроился работать курьером и успешно делал это (работал) около 1.5 лет.
+              </div>
+              <div class="text-sm lg:text-2xl">
+                Когда я закончил университет, то устроился работать уже по специальности: разработчиком IOS приложений в компанию BeApps. Отдельное спасибо Вам, ребята, что взяли меня совсем без опыта, научили многому и ждете (надеюсь) уже 10 месяцев. Надеюсь, я смогу пригодиться, ахахах.
+              </div>
+            </div>
+            <div class="hidden lg:block lg:flex-auto h-64 h-[300px] md:h-[400px] w-[1200px] my-12 lg:my-0 flex-auto shrink-0 object-cover" >
+              <img src="./assets/img/andrey.jpg" class="object-cover h-full w-full ">
+            </div>
+        </div>
+        <div class="flex flex-col  lg:flex-row-reverse lg:gap-8">
+          <div class="lg:flex-[3,3,0%]">
+            <div class="text-3xl mb-6 lg:text-5xl">Увлечения</div>
+            <div class="indent-3 text-sm md:text-base lg:text-2xl">
               Меня, как Вы уже поняли по первой странице, зовут Андрей Тимофеев. Я родился и вырос в небольшом городке Тверской области под названием Удомля. Там же я закончил школу и перебрался в Тверь, где закончил ТвГУ на факультете ПМиК.
             </div>
             <div class="text-sm lg:text-2xl">
               Несмотря на все трудности учебы, это время я считаю лучшим в своей жизни. За время обучения я вырос (и не только физически), нашел много крутых ребят и свою любовь.
+            </div>
+            <div class="h-64 h-[300px] md:h-[400px] lg:hidden my-12 lg:my-0 flex-auto shrink-0 object-cover" >
+              <img src="./assets/img/hackmen.jpeg" class="object-cover h-full w-full ">
             </div>
             <div class="text-sm lg:text-2xl">
               За время учебы я успел поработать в Колл-Центре, на складе Озон’а, сервисном центре. Отдельное упоминание стоит отдать сервису Delivery Club, в который я устроился работать курьером и успешно делал это (работал) около 1.5 лет.
@@ -130,9 +154,10 @@
               Когда я закончил университет, то устроился работать уже по специальности: разработчиком IOS приложений в компанию BeApps. Отдельное спасибо Вам, ребята, что взяли меня совсем без опыта, научили многому и ждете (надеюсь) уже 10 месяцев. Надеюсь, я смогу пригодиться, ахахах.
             </div>
           </div>
-          <div class="h-64 md:h-[320px] flex-auto shrink-0 w-full  object-cover" >
-            <img src="./assets/img/backend.jpg" class="object-cover h-full w-full ">
+          <div  class="hidden lg:block lg:flex-auto h-64 h-[300px] md:h-[400px] w-[1200px] my-12 lg:my-0 flex-auto shrink-0 object-cover" >
+            <img src="./assets/img/hackmen.jpeg" class="object-cover h-full w-full ">
           </div>
+
         </div>
       </div>
 
@@ -179,6 +204,7 @@
 </template>
 
 <script>
+
 import ProductMusic from "@/components/ProductMusic";
 import ProductCode from "@/components/ProductCode";
 import AppIcon from "@/components/AppIcon";
@@ -187,9 +213,9 @@ export default {
   components: {AppIcon,ProductCode,ProductMusic},
   data() {
     return {
-    projectCode: true,
-    projectMusic: false,
-    headerDrop: false,
+      projectCode: true,
+      projectMusic: false,
+      headerDrop: false,
     }
   },
   methods: {
@@ -205,7 +231,7 @@ export default {
         this.projectCode = !this.projectCode
       }
     }
-  }
+  },
 }
 </script>
 

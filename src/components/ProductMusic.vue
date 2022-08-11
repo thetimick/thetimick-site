@@ -1,6 +1,8 @@
 <template>
-  <div class="justify-center group gap-6 py-4  md:text-start md:text-left items-center h-36  w-full px-4 xl:px-12 xl:gap-12 sm:justify-start">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, perferendis!
+  <div class="justify-center group gap-6 w-full md:text-start md:text-left items-center h-28  px-4 xl:px-12 xl:gap-12">
+    <audio id="myaudio" controls  class="block">
+      <source  src="../assets/media/test.mp3" type="audio/mpeg">
+    </audio>
   </div>
   <div id="player"></div>
 </template>
@@ -17,6 +19,9 @@ export default {
   methods: {
 
   },
+  created() {
+
+  }
 
 }
 

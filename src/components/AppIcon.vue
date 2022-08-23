@@ -134,8 +134,34 @@
       <rect x="2.1138" y="-0.0140072" width="18.0971" height="18.0951" rx="2.5" transform="matrix(0.699899 -0.714242 0.709303 0.704904 15.9903 16.5741)" stroke="#A4A4A4" stroke-width="3"/>
       <rect x="2.1138" y="-0.0140072" width="18.0971" height="18.0951" rx="2.5" transform="matrix(0.699899 -0.714242 0.709303 0.704904 30.9158 31.8165)" stroke="#A4A4A4" stroke-width="3"/>
     </svg>
-  </div>
+    <svg v-if="this.name === 'upArrow'" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+         viewBox="0 0 26.775 26.775" style="enable-background:new 0 0 26.775 26.775;" xml:space="preserve">
+<g>
+	<path style="fill:white" d="M13.915,0.379l8.258,9.98c0,0,1.252,1.184-0.106,1.184c-1.363,0-4.653,0-4.653,0s0,0.801,0,2.025
+		c0,3.514,0,9.9,0,12.498c0,0,0.184,0.709-0.885,0.709c-1.072,0-5.783,0-6.55,0c-0.765,0-0.749-0.592-0.749-0.592
+		c0-2.531,0-9.133,0-12.527c0-1.102,0-1.816,0-1.816s-2.637,0-4.297,0c-1.654,0-0.408-1.24-0.408-1.24s7.025-9.325,8.001-10.305
+		C13.24-0.414,13.915,0.379,13.915,0.379z"/>
+</g>
+</svg>
+    <svg v-if="this.name === 'pause'"
+        version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+        viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve">
+	<g>
+		<path d="M15.5,0c-1.103,0-2,0.897-2,2v40c0,1.103,0.897,2,2,2s2-0.897,2-2V2C17.5,0.897,16.603,0,15.5,0z"/>
+    <path d="M28.5,0c-1.103,0-2,0.897-2,2v40c0,1.103,0.897,2,2,2s2-0.897,2-2V2C30.5,0.897,29.603,0,28.5,0z"/>
+	</g>
+</svg>
+    <svg v-if="this.name === 'play'" fill="white" width="24px" height="24px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+      <title>ic_fluent_play_48_filled</title>
+      <desc>Created with Sketch.</desc>
+      <g id="🔍-Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_fluent_play_48_filled" fill="#A4A4A4" fill-rule="nonzero">
+          <path d="M13.7501344,8.41212026 L38.1671892,21.1169293 C39.7594652,21.9454306 40.3786269,23.9078584 39.5501255,25.5001344 C39.2420737,26.0921715 38.7592263,26.5750189 38.1671892,26.8830707 L13.7501344,39.5878797 C12.1578584,40.4163811 10.1954306,39.7972194 9.36692926,38.2049434 C9.12586301,37.7416442 9,37.2270724 9,36.704809 L9,11.295191 C9,9.50026556 10.4550746,8.045191 12.25,8.045191 C12.6976544,8.045191 13.1396577,8.13766178 13.5485655,8.31589049 L13.7501344,8.41212026 Z" id="🎨-Color"></path>
+        </g>
+      </g>
+    </svg>
 
+  </div>
 
 </template>
 
@@ -147,7 +173,6 @@
     components: {},
     data() {
       return {
-
       }
     },
     props:{

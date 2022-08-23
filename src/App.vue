@@ -1,30 +1,22 @@
 <template>
-  <div class="w-full relative full-background min-h-screen"> <!-- Вся ширина-->
-    <div class="absolute bg-black z-20 h-screen w-full opacity-50"></div> <!--Закрашивание-->
-    <AppIcon class="absolute"/>
+  <div class="black-background"> <!-- Вся ширина-->
+    <a href="#main">
+      <AppIcon
+        id="scrollUpButton"
+        class="hidden fixed right-0 bottom-0 z-50 p-1 dark rounded-xl mr-3 mb-3 border h-10 w-10"
+        name="upArrow"
+      />
+    </a>
+    <div class="absolute bg-black z-20 h-screen w-full opacity-30"></div> <!--Закрашивание-->
     <div class="z-10 blur"></div>
     <header
-      class="justify-center lg:justify-end md:px-16 gap-2 px-1 w-full z-50">
-
-      <AppIcon
-        name="logo"
-        class="w-14 h-14 cursor-pointer absolute logo left-0 md:ml-16 ml-2"
-        @click="headerDrop = !headerDrop"
-      />
-      <div class="m-auto font-bold ml-16  md:ml-0 md:absolute lg:left-0 lg:ml-32 text-4xl">TheTimickRus</div>
-      <a href="#main" class="hover:border-b  hidden lg:block">Главная</a>
-      <a href="#about" class="hover:border-b hidden lg:block">Проекты</a>
-      <a href="#projects" class="hover:border-b hidden lg:block">Placeholder</a>
-      <a href="#contacts" class="hover:border-b hidden lg:block">Placeholder</a>
-      <div
-        v-if="headerDrop"
-        class="-translate-x-2/3 translate-y-3/4 left-[100px]"
-        :class="{'dropdown-body' : headerDrop}"
-      >
-        <a href="#main" class="hover:text-white">Главная</a>
-        <a href="#about" class="hover:text-white">Проекты</a>
-        <a href="#projects" class="hover:text-white">Placeholder</a>
-        <a href="#contacts" class="hover:text-white">Placeholder</a>
+      class="max-w-screen-2xl md:px-16 w-full gap-12 z-50">
+      <div class="flex items-center gap-4 m-auto font-bold md:ml-0 md:absolute lg:left-0 lg:ml-32 text-4xl">
+        <AppIcon
+          name="logo"
+          class="w-14 h-14 cursor-pointer logo"
+        />
+        The Timick
       </div>
     </header>
     <div class="absolute h-screen w-full opacity-30"> <!--IMG-->
@@ -34,50 +26,51 @@
       />
     </div>
     <div class="container mx-auto max-w-screen-2xl px-4 lg:px-8"> <!--Ширина контента-->
-
-      <div id="main" class="section h-screen pt-4 z-30" > <!--секция тут менять прозначность -->
+      <div id="main" class="section z-30" > <!--секция тут менять прозначность -->
         <div class="flex justify-center items-center h-full">
           <div class="flex flex-col gap-6 items-center">
             <img src="./assets/img/main-avatar.jpg" class="h-40 w-40 lg:w-52 lg:h-52 rounded-full object-cover" >
             <div class="text-4xl font-bold whitespace-nowrap">Андрей Тимофеев</div>
-            <div class="text-2xl ">Более чем программист</div>
-            <div class="relative group py-3 px-1 md:px-7 bg-transparent gap-4 md:gap-12"> <!-- SocialNavigation -->
-              <div class="-z-20 blur"></div>
+            <div class="text-2xl">Более чем программист</div>
+            <div class="group py-3 px-1 md:px-7 bg-transparent gap-4 md:gap-12"> <!-- SocialNavigation -->
+              <div class="-z-10 blur"></div>
               <AppIcon
-                  name="instagram"
-                  class="social-icon"
+                name="instagram"
+                class="social-icon"
               />
               <AppIcon
-                  name="vk"
-                  class="social-icon"
+                name="vk"
+                class="social-icon"
               />
               <AppIcon
                 name="telegram"
                 class="social-icon"
               />
               <AppIcon
-                  name="github"
-                  class="social-icon"
+                name="github"
+                class="social-icon"
               />
               <AppIcon
-                  name="soundcloud"
-                  class="social-icon"
+                name="soundcloud"
+                class="social-icon"
               />
             </div>
+            <a href="#about">
             <div class="justify-center relative group dark cursor-pointer text-2xl w-80 h-12">
               Обо мне
               <div class="-z-20 blur"></div>
             </div>
+            </a>
           </div>
         </div>
       </div>
 
       <div id="projects" class="px-6 mt-8 gap-12 flex flex-col md:flex-row section">  <!--секция-->
-        <div class="flex p-6 items-center text-center flex-col gap-4 md:gap-16 flex-initial border-b md:border-b-0  md:border-r lg:p-14 ">
+        <div class="flex p-6 text-center flex-col gap-4 md:gap-16 border-b md:border-b-0 md:border-r lg:p-14">
           <div class="font-bold whitespace-nowrap text-xl md:text-4xl">Мои проекты</div>
-          <div class="flex  gap-2 w-full justify-around md:gap-10 md:flex-col">
+          <div class="flex gap-2 w-full justify-around md:gap-10 md:flex-col">
             <div
-              class="group  flex-1 justify-center cursor-pointer py-2 px-2 lg:px-12"
+              class="group font-semibold flex-1 justify-center cursor-pointer py-4 px-2 lg:px-12"
               @click="projectSwitchCode"
             >
               <span
@@ -101,121 +94,137 @@
             </div>
           </div>
         </div>
-        <div v-if="projectMusic" class="flex flex-col items-center w-full h-full gap-4 px-2 xl:px-12 md:py-14">
-          <ProductMusic/>
+        <div
+          v-show="projectMusic"
+          class="flex flex-col w-full gap-4 px-2 xl:px-12 md:py-14"
+        >
+          <ProductMusic
+            :fetchBeats="this.fetchBeats"
+            :id="0"
+          />
+          <ProductMusic
+            :fetchBeats="this.fetchBeats"
+            :id="1"
+          />
+          <ProductMusic
+            :fetchBeats="this.fetchBeats"
+            :id="2"
+          />
         </div>
-        <div v-if="projectCode" class="flex flex-col items-center w-full h-full gap-4 px-2 xl:px-12 md:py-14">
-          <ProductCode/>
-          <ProductCode/>
-          <ProductCode/>
+        <div
+          v-show="projectCode"
+          class="flex flex-col items-center w-full h-full gap-4 px-2 xl:px-12 md:py-14"
+        >
+          <ProductCode
+            v-for="project in fetchProjects"
+            :key="project.id"
+            :currentProject="project"
+          />
         </div>
       </div>
 
-      <div id="about" class="section px-6 mt-8 flex gap-12 flex-col">  <!--секция-->
-        <div class="flex flex-col lg:items-center lg:flex-row lg:gap-8">
-            <div class="lg:flex-[3,3,0%]">
+      <div id="about" class="section px-6 mt-8 flex flex-col">  <!--секция-->
+        <div class="flex flex-col items-center lg:flex-row lg:gap-8">
+            <div class="">
               <div class="text-3xl mb-6 lg:text-5xl">Кто я?</div>
-              <div class="indent-3 text-sm md:text-base lg:text-2xl">
-                Меня, как Вы уже поняли по первой странице, зовут Андрей Тимофеев. Я родился и вырос в небольшом городке Тверской области под названием Удомля. Там же я закончил школу и перебрался в Тверь, где закончил ТвГУ на факультете ПМиК.
-              </div>
-              <div class="text-sm lg:text-2xl">
-                Несмотря на все трудности учебы, это время я считаю лучшим в своей жизни. За время обучения я вырос (и не только физически), нашел много крутых ребят и свою любовь.
-              </div>
-              <div class="h-64 h-[300px] md:h-[400px] lg:hidden my-12 flex-auto shrink-0 object-cover" >
-                <img src="./assets/img/andrey.jpg" class="object-cover h-full w-full ">
-              </div>
-              <div class="text-sm lg:text-2xl">
-                За время учебы я успел поработать в Колл-Центре, на складе Озон’а, сервисном центре. Отдельное упоминание стоит отдать сервису Delivery Club, в который я устроился работать курьером и успешно делал это (работал) около 1.5 лет.
-              </div>
-              <div class="text-sm lg:text-2xl">
-                Когда я закончил университет, то устроился работать уже по специальности: разработчиком IOS приложений в компанию BeApps. Отдельное спасибо Вам, ребята, что взяли меня совсем без опыта, научили многому и ждете (надеюсь) уже 10 месяцев. Надеюсь, я смогу пригодиться, ахахах.
+              <div class="indent-3 text-sm sm:text-base lg:text-xl">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Amet, assumenda commodi culpa deserunt dicta dolorem est
+                facere illo itaque laboriosam laudantium natus non numquam
+                officiis quaerat ratione recusandae similique tenetur, veniam voluptates.
+                Distinctio eaque eius, itaque laborum magni perferendis qui. Ad aperiam architecto
+                beatae consequuntur deserunt dicta dolores ducimus enim error eum fugiat hic in iste,
+                itaque iure laborum magnam minus nesciunt, officia rem repellat, rerum sed? Accusamus
+                accusantium commodi culpa ea earum incidunt ipsa, ipsum laboriosam laborum modi totam?
               </div>
             </div>
-            <div class="hidden lg:block lg:flex-auto h-64 h-[300px] md:h-[400px] w-[1200px] my-12 lg:my-0 flex-auto shrink-0 object-cover" >
-              <img src="./assets/img/andrey.jpg" class="object-cover h-full w-full ">
-            </div>
+          <CarouselComponent
+            :fetchAbout="this.fetchAbout"
+            :id="0"
+            class="my-12 lg:my-0"
+          />
         </div>
-        <div class="flex flex-col  lg:flex-row-reverse lg:gap-8">
-          <div class="lg:flex-[3,3,0%]">
+        <div class="flex flex-col items-center lg:flex-row-reverse lg:gap-8">
+          <div class="">
             <div class="text-3xl mb-6 lg:text-5xl">Увлечения</div>
-            <div class="indent-3 text-sm md:text-base lg:text-2xl">
-              Меня, как Вы уже поняли по первой странице, зовут Андрей Тимофеев. Я родился и вырос в небольшом городке Тверской области под названием Удомля. Там же я закончил школу и перебрался в Тверь, где закончил ТвГУ на факультете ПМиК.
-            </div>
-            <div class="text-sm lg:text-2xl">
-              Несмотря на все трудности учебы, это время я считаю лучшим в своей жизни. За время обучения я вырос (и не только физически), нашел много крутых ребят и свою любовь.
-            </div>
-            <div class="h-64 h-[300px] md:h-[400px] lg:hidden my-12 lg:my-0 flex-auto shrink-0 object-cover" >
-              <img src="./assets/img/hackmen.jpeg" class="object-cover h-full w-full ">
-            </div>
-            <div class="text-sm lg:text-2xl">
-              За время учебы я успел поработать в Колл-Центре, на складе Озон’а, сервисном центре. Отдельное упоминание стоит отдать сервису Delivery Club, в который я устроился работать курьером и успешно делал это (работал) около 1.5 лет.
-            </div>
-            <div class="text-sm lg:text-2xl">
-              Когда я закончил университет, то устроился работать уже по специальности: разработчиком IOS приложений в компанию BeApps. Отдельное спасибо Вам, ребята, что взяли меня совсем без опыта, научили многому и ждете (надеюсь) уже 10 месяцев. Надеюсь, я смогу пригодиться, ахахах.
+            <div class="indent-3 text-sm sm:text-base lg:text-xl">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Amet, assumenda commodi culpa deserunt dicta dolorem est
+              facere illo itaque laboriosam laudantium natus non numquam
+              officiis quaerat ratione recusandae similique tenetur, veniam voluptates.
+              Distinctio eaque eius, itaque laborum magni perferendis qui. Ad aperiam architecto
+              beatae consequuntur deserunt dicta dolores ducimus enim error eum fugiat hic in iste,
+              itaque iure laborum magnam minus nesciunt, officia rem repellat, rerum sed? Accusamus
+              accusantium commodi culpa ea earum incidunt ipsa, ipsum laboriosam laborum modi totam?
             </div>
           </div>
-          <div  class="hidden lg:block lg:flex-auto h-64 h-[300px] md:h-[400px] w-[1200px] my-12 lg:my-0 flex-auto shrink-0 object-cover" >
-            <img src="./assets/img/hackmen.jpeg" class="object-cover h-full w-full ">
-          </div>
-
+          <CarouselComponent
+            :fetchAbout="this.fetchAbout"
+            :id="1"
+            class="my-12 lg:my-0"/>
         </div>
       </div>
-
-      <div id="work" class="section mt-8 flex flex-col md:flex-row">  <!--секция-->
-        <div class="flex p-6 items-center text-center flex-col gap-4 md:gap-16 flex-initial md:border-r md:p-14 ">
-          <div class="font-bold text-lg md:text-2xl">Мои проекты</div>
-          <div class="flex gap-10 text-center md:flex-col">
-              <span
-                  class="text-base cursor-pointer md:text-lg"
-                  :class="{'border-b':projectCode}"
-                  @click="projectSwitchCode"
-              >
-              Программирование
-              </span>
-            <span
-                class="text-base  cursor-pointer md:text-lg"
-                :class="{'border-b':projectMusic}"
-                @click="projectSwitchMusic"
-            >
-                Битмейкинг
-              </span>
-          </div>
-        </div>
-        <div v-if="projectMusic" class="flex-initial py-14 flex flex-col gap-4 px-10">
-          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>
-          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>
-          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>
-          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>
-        </div>
-        <div v-if="projectCode" class="flex flex-col items-center justify-around text-center w-full h-full gap-4 px-10 md:justify-between  md:py-14">
-          <div class="text-lg p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>
-          <div class="h-64 md:h-[320px] shrink-0 w-full object-cover" >
-            <img src="./assets/img/backend.jpg" class="object-cover h-full w-full ">
-          </div>
-          <div class="text-lg p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>
-          <div class="h-64 md:h-[320px]  shrink-0 w-full object-cover">
-            <img src="./assets/img/backedn2.jpg" class="object-cover h-full w-full  ">
-          </div>
-        </div>
-      </div>
-
+<!--      <div id="work" class="section mt-8 flex flex-col md:flex-row">  &lt;!&ndash;секция&ndash;&gt;-->
+<!--        <div class="flex p-6 items-center text-center flex-col gap-4 md:gap-16 flex-initial md:border-r md:p-14 ">-->
+<!--          <div class="font-bold text-lg md:text-2xl">Мои проекты</div>-->
+<!--          <div class="flex gap-10 text-center md:flex-col">-->
+<!--              <span-->
+<!--                  class="text-base cursor-pointer md:text-lg"-->
+<!--                  :class="{'border-b':projectCode}"-->
+<!--                  @click="projectSwitchCode"-->
+<!--              >-->
+<!--              Программирование-->
+<!--              </span>-->
+<!--            <span-->
+<!--                class="text-base  cursor-pointer md:text-lg"-->
+<!--                :class="{'border-b':projectMusic}"-->
+<!--                @click="projectSwitchMusic"-->
+<!--            >-->
+<!--                Битмейкинг-->
+<!--              </span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div v-if="projectMusic" class="flex-initial py-14 flex flex-col gap-4 px-10">-->
+<!--          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
+<!--          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
+<!--          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
+<!--          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
+<!--        </div>-->
+<!--        <div v-if="projectCode" class="flex flex-col items-center justify-around text-center w-full h-full gap-4 px-10 md:justify-between  md:py-14">-->
+<!--          <div class="text-lg p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
+<!--          <div class="h-64 md:h-[320px] shrink-0 w-full object-cover" >-->
+<!--            <img src="https://firebasestorage.googleapis.com/v0/b/thetimickrus-back.appspot.com/o/photos%2F7.webp?alt=media&token=2335ffa7-99e1-4eee-9dd1-adfb2eebde29" class="object-cover h-full w-full ">-->
+<!--          </div>-->
+<!--          <div class="text-lg p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
+<!--          <div class="h-64 md:h-[320px]  shrink-0 w-full object-cover">-->
+<!--            <img src="./assets/img/backedn2.jpg" class="object-cover h-full w-full  ">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
+    <footer class="px-8 py-2 w-full mt-24">
+      ©Andrey Timofeev
+    </footer>
   </div>
 </template>
 
 <script>
 
+import 'vue3-carousel/dist/carousel.css';
 import ProductMusic from "@/components/ProductMusic";
 import ProductCode from "@/components/ProductCode";
 import AppIcon from "@/components/AppIcon";
+import CarouselComponent from "@/components/CarouselComponent";
 export default {
   name: 'App',
-  components: {AppIcon,ProductCode,ProductMusic},
+  components: {CarouselComponent, AppIcon,ProductCode,ProductMusic},
   data() {
     return {
-      projectCode: true,
-      projectMusic: false,
-      headerDrop: false,
+      projectCode: false,
+      projectMusic: true,
+      fetchProjects:[],
+      fetchBeats:'',
+      fetchAbout:'',
     }
   },
   methods: {
@@ -232,6 +241,44 @@ export default {
       }
     }
   },
+  async mounted () {
+    let fetchProjects = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchProjects`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }
+    )
+    this.fetchProjects = await fetchProjects.json()
+    window.addEventListener('scroll',function () {
+      if (scrollY > 400 ) {
+        document.getElementById('scrollUpButton').classList.remove('hidden')
+      }
+      else {
+        document.getElementById('scrollUpButton').classList.add('hidden')
+      }
+    })
+    let fetchBeats = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchBeats`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }
+    )
+    this.fetchBeats = await fetchBeats.json()
+    let fetchAbout = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchAbout`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }
+    )
+    this.fetchAbout = await fetchAbout.json()
+  },
 }
 </script>
 
+<style> </style>

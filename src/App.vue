@@ -75,7 +75,7 @@
       </div>
 
       <div id="projects" class="px-6 mt-8 gap-12 flex flex-col md:flex-row section">  <!--секция-->
-        <div class="flex p-6 text-center flex-col gap-4 md:gap-16 border-b md:border-b-0 md:border-r lg:p-14">
+        <div class="flex p-6 text-center flex-col gap-4 md:gap-16 border-b-2 md:border-b-0 md:border-r-2 border-current lg:p-14">
           <div class="font-bold whitespace-nowrap text-xl md:text-4xl">
             Мои проекты
           </div>

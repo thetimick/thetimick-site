@@ -5,10 +5,10 @@
    :href="currentProject.url"
   >
     <div class="group gap-6 py-4 items-center h-36 w-full px-4 xl:px-12 xl:gap-12 sm:justify-start">
-      <img
-        src="../assets/img/Github.png"
-        class="hidden sm:block h-24 w-24 rounded-full object-cover"
-      >
+      <AppIcon
+          name="github"
+          class="hidden sm:block h-20 w-20 shrink-0 rounded-full object-cover"
+      />
       <div>
         <div class="font-bold lg:text-4xl pb-4">
           {{currentProject.title}}
@@ -23,10 +23,10 @@
 
 
 <script>
-
+import AppIcon from "@/components/AppIcon";
 export default {
   name: "ProductCode",
-  components: {},
+  components: {AppIcon},
   data() {
     return {
     }

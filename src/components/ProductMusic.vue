@@ -59,6 +59,7 @@ export default {
       this.$refs.audio.play()
       this.ShowPause = true
       this.ShowPlay = false
+      this.$refs.audio.volume = 0.5
     },
     pause() {
       this.$refs.audio.pause()
@@ -77,6 +78,7 @@ export default {
       let audioDuration = Math.round(this.$refs.audio.duration)
       this.$refs.audioTime.style.width = (currentTime * 100) / audioDuration + '%'
     }, 1000)
+
   },
 }
 

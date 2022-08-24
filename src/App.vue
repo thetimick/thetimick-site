@@ -1,12 +1,5 @@
 <template>
   <div class="black-background"> <!-- Вся ширина-->
-    <a href="#main">
-      <AppIcon
-        id="scrollUpButton"
-        class="hidden fixed right-0 bottom-0 z-50 p-1 dark rounded-xl mr-3 mb-3 border h-10 w-10"
-        name="upArrow"
-      />
-    </a>
     <div class="absolute bg-black z-20 h-screen w-full opacity-30"></div> <!--Закрашивание-->
     <div class="z-10 blur"></div>
     <header
@@ -31,7 +24,7 @@
           <div class="flex flex-col gap-6 items-center">
             <img src="./assets/img/main-avatar.jpg" class="h-40 w-40 lg:w-52 lg:h-52 rounded-full object-cover" >
             <div class="text-4xl font-bold whitespace-nowrap">Андрей Тимофеев</div>
-            <div class="text-2xl">/* реальность полна разочарований... */</div>
+            <div class="text-2xl text-center">Реальность полна разочарований...</div>
             <div class="group py-3 px-1 md:px-7 bg-transparent gap-4 md:gap-12"> <!-- SocialNavigation -->
               <div class="-z-10 blur"></div>
               <a href="https://www.instagram.com/thetimickrus/" target="_blank">
@@ -169,8 +162,8 @@
         </div>
       </div>
     </div>
-    <footer class="px-8 py-2 w-full mt-24">
-      ©Andrey Timofeev
+    <footer class="px-8 py-2 w-full mt-24 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">
+      © Andrey Timofeev | The Timick
     </footer>
   </div>
 </template>
@@ -209,14 +202,6 @@ export default {
     }
   },
   async mounted () {
-    window.addEventListener('scroll',function () {
-      if (scrollY > 400 ) {
-        document.getElementById('scrollUpButton').classList.remove('hidden')
-      }
-      else {
-        document.getElementById('scrollUpButton').classList.add('hidden')
-      }
-    })
     let fetchProjects = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchProjects`)
     this.fetchProjects = await fetchProjects.json()
     let fetchBeats = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchBeats`)

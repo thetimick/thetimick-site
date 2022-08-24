@@ -1,7 +1,7 @@
 <template>
   <div class="h-36 text-sm lg:text-xl w-full group gap-6 md:text-start md:text-left items-center px-4 xl:px-12 xl:gap-12">
     <audio
-      :src="this.currentBeat.url"
+      :src="currentMusic.url"
       ref="audio"
       id="myaudio"
       class="bg-blue-400 w-32 h-12">
@@ -21,8 +21,8 @@
           class="social-icon shadow-2xl"
         />
         <div class="">
-          <div>{{this.currentBeat.title}}</div>
-          <div class="text-sm">{{this.currentBeat.artist}}</div>
+          <div>{{currentMusic.title}}</div>
+          <div class="text-sm">{{currentMusic.artist}}</div>
         </div>
       </div>
       <div
@@ -56,7 +56,6 @@ export default {
   },
   methods: {
     play () {
-
       this.$refs.audio.play()
       this.ShowPause = true
       this.ShowPlay = false
@@ -68,12 +67,9 @@ export default {
     }
   },
   props: {
-    fetchBeats: {
-      Array
+    currentMusic: {
+      type: Object
     },
-    id: {
-      Number
-    }
   },
   mounted() {
     setInterval( () => {
@@ -82,12 +78,8 @@ export default {
       this.$refs.audioTime.style.width = (currentTime * 100) / audioDuration + '%'
     }, 1000)
   },
-  watch: {
-    fetchBeats() {
-      this.currentBeat = this.fetchBeats.find(item => item.id === this.id)
-    }
-  }
 }
+
 
 
 </script>

@@ -34,26 +34,35 @@
             <div class="text-2xl">Более чем программист</div>
             <div class="group py-3 px-1 md:px-7 bg-transparent gap-4 md:gap-12"> <!-- SocialNavigation -->
               <div class="-z-10 blur"></div>
-              <AppIcon
-                name="instagram"
-                class="social-icon"
-              />
-              <AppIcon
-                name="vk"
-                class="social-icon"
-              />
-              <AppIcon
-                name="telegram"
-                class="social-icon"
-              />
-              <AppIcon
-                name="github"
-                class="social-icon"
-              />
-              <AppIcon
-                name="soundcloud"
-                class="social-icon"
-              />
+              <a href="https://www.instagram.com/thetimickrus/" target="_blank">
+                <AppIcon
+                  name="instagram"
+                  class="social-icon"
+                />
+              </a>
+              <a href="https://vk.com/thetimickrus">
+                <AppIcon
+                  name="vk"
+                  class="social-icon"
+                />
+              </a>
+              <a href="https://t.me/TheTimickRus">
+                <AppIcon
+                  name="telegram"
+                  class="social-icon"/>
+                </a>
+              <a href="https://github.com/TheTimickRus">
+                <AppIcon
+                  name="github"
+                  class="social-icon"
+                />
+              </a>
+              <a href="https://soundcloud.com/thetimickrus">
+                <AppIcon
+                  name="soundcloud"
+                  class="social-icon"
+                />
+              </a>
             </div>
             <a href="#about">
             <div class="justify-center relative group dark cursor-pointer text-2xl w-80 h-12">
@@ -99,16 +108,9 @@
           class="flex flex-col w-full gap-4 px-2 xl:px-12 md:py-14"
         >
           <ProductMusic
-            :fetchBeats="this.fetchBeats"
-            :id="0"
-          />
-          <ProductMusic
-            :fetchBeats="this.fetchBeats"
-            :id="1"
-          />
-          <ProductMusic
-            :fetchBeats="this.fetchBeats"
-            :id="2"
+            v-for="music in fetchBeats"
+            :currentMusic="music"
+            :key="music.id"
           />
         </div>
         <div
@@ -164,43 +166,6 @@
             class="my-12 lg:my-0"/>
         </div>
       </div>
-<!--      <div id="work" class="section mt-8 flex flex-col md:flex-row">  &lt;!&ndash;секция&ndash;&gt;-->
-<!--        <div class="flex p-6 items-center text-center flex-col gap-4 md:gap-16 flex-initial md:border-r md:p-14 ">-->
-<!--          <div class="font-bold text-lg md:text-2xl">Мои проекты</div>-->
-<!--          <div class="flex gap-10 text-center md:flex-col">-->
-<!--              <span-->
-<!--                  class="text-base cursor-pointer md:text-lg"-->
-<!--                  :class="{'border-b':projectCode}"-->
-<!--                  @click="projectSwitchCode"-->
-<!--              >-->
-<!--              Программирование-->
-<!--              </span>-->
-<!--            <span-->
-<!--                class="text-base  cursor-pointer md:text-lg"-->
-<!--                :class="{'border-b':projectMusic}"-->
-<!--                @click="projectSwitchMusic"-->
-<!--            >-->
-<!--                Битмейкинг-->
-<!--              </span>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div v-if="projectMusic" class="flex-initial py-14 flex flex-col gap-4 px-10">-->
-<!--          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
-<!--          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
-<!--          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
-<!--          <div class="text-lg bg-gray-600 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
-<!--        </div>-->
-<!--        <div v-if="projectCode" class="flex flex-col items-center justify-around text-center w-full h-full gap-4 px-10 md:justify-between  md:py-14">-->
-<!--          <div class="text-lg p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
-<!--          <div class="h-64 md:h-[320px] shrink-0 w-full object-cover" >-->
-<!--            <img src="https://firebasestorage.googleapis.com/v0/b/thetimickrus-back.appspot.com/o/photos%2F7.webp?alt=media&token=2335ffa7-99e1-4eee-9dd1-adfb2eebde29" class="object-cover h-full w-full ">-->
-<!--          </div>-->
-<!--          <div class="text-lg p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minima!</div>-->
-<!--          <div class="h-64 md:h-[320px]  shrink-0 w-full object-cover">-->
-<!--            <img src="./assets/img/backedn2.jpg" class="object-cover h-full w-full  ">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
     </div>
     <footer class="px-8 py-2 w-full mt-24">
       ©Andrey Timofeev
@@ -220,8 +185,8 @@ export default {
   components: {CarouselComponent, AppIcon,ProductCode,ProductMusic},
   data() {
     return {
-      projectCode: false,
-      projectMusic: true,
+      projectCode: true,
+      projectMusic: false,
       fetchProjects:[],
       fetchBeats:'',
       fetchAbout:'',
@@ -242,15 +207,6 @@ export default {
     }
   },
   async mounted () {
-    let fetchProjects = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchProjects`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        }
-    )
-    this.fetchProjects = await fetchProjects.json()
     window.addEventListener('scroll',function () {
       if (scrollY > 400 ) {
         document.getElementById('scrollUpButton').classList.remove('hidden')
@@ -259,23 +215,11 @@ export default {
         document.getElementById('scrollUpButton').classList.add('hidden')
       }
     })
-    let fetchBeats = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchBeats`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        }
-    )
+    let fetchProjects = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchProjects`)
+    this.fetchProjects = await fetchProjects.json()
+    let fetchBeats = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchBeats`)
     this.fetchBeats = await fetchBeats.json()
-    let fetchAbout = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchAbout`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        }
-    )
+    let fetchAbout = await fetch(`http://thetimickrus-001-site1.atempurl.com/TheTimickRus/FetchAbout`)
     this.fetchAbout = await fetchAbout.json()
   },
 }

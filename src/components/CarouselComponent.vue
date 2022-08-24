@@ -7,6 +7,7 @@
     <slide v-for="(image,index) in images" :key="image">
       <div class="flex flex-col items-center object-cover h-full w-full">
         <img
+          alt="../assets/img/10.jpg"
           :src="image"
           class="border object-cover h-full max-h-[400px] md:h-[400px] w-full"
         >

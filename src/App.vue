@@ -31,7 +31,7 @@
           <div class="flex flex-col gap-6 items-center">
             <img src="./assets/img/main-avatar.jpg" class="h-40 w-40 lg:w-52 lg:h-52 rounded-full object-cover" >
             <div class="text-4xl font-bold whitespace-nowrap">Андрей Тимофеев</div>
-            <div class="text-2xl">Более чем программист</div>
+            <div class="text-2xl">/* реальность полна разочарований... */</div>
             <div class="group py-3 px-1 md:px-7 bg-transparent gap-4 md:gap-12"> <!-- SocialNavigation -->
               <div class="-z-10 blur"></div>
               <a href="https://www.instagram.com/thetimickrus/" target="_blank">
@@ -40,24 +40,24 @@
                   class="social-icon"
                 />
               </a>
-              <a href="https://vk.com/thetimickrus">
+              <a href="https://vk.com/thetimickrus" target="_blank" >
                 <AppIcon
                   name="vk"
                   class="social-icon"
                 />
               </a>
-              <a href="https://t.me/TheTimickRus">
+              <a href="https://t.me/TheTimickRus" target="_blank">
                 <AppIcon
                   name="telegram"
                   class="social-icon"/>
                 </a>
-              <a href="https://github.com/TheTimickRus">
+              <a href="https://github.com/TheTimickRus" target="_blank">
                 <AppIcon
                   name="github"
                   class="social-icon"
                 />
               </a>
-              <a href="https://soundcloud.com/thetimickrus">
+              <a href="https://soundcloud.com/thetimickrus" target="_blank" >
                 <AppIcon
                   name="soundcloud"
                   class="social-icon"
@@ -76,15 +76,17 @@
 
       <div id="projects" class="px-6 mt-8 gap-12 flex flex-col md:flex-row section">  <!--секция-->
         <div class="flex p-6 text-center flex-col gap-4 md:gap-16 border-b md:border-b-0 md:border-r lg:p-14">
-          <div class="font-bold whitespace-nowrap text-xl md:text-4xl">Мои проекты</div>
+          <div class="font-bold whitespace-nowrap text-xl md:text-4xl">
+            Мои проекты
+          </div>
           <div class="flex gap-2 w-full justify-around md:gap-10 md:flex-col">
             <div
               class="group font-semibold flex-1 justify-center cursor-pointer py-4 px-2 lg:px-12"
               @click="projectSwitchCode"
             >
               <span
-                class="text-base font-semibold md:text-xl"
-                :class="{'border-b':projectCode}"
+                class="text-base font-semibold md:text-xl border-current"
+                :class="{'border-b-2':projectCode}"
               >
               Программирование
               </span>
@@ -94,8 +96,8 @@
               @click="projectSwitchMusic"
             >
               <span
-                class="text-base font-semibold md:text-xl"
-                :class="{'border-b':projectMusic}"
+                class="text-base font-semibold md:text-xl border-current"
+                :class="{'border-b-2':projectMusic}"
                 @click="projectSwitchMusic"
               >
                 Битмейкинг

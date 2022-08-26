@@ -9,7 +9,7 @@
         <img
           alt="../assets/img/10.jpg"
           :src="image"
-          class="border object-cover h-full max-h-[400px] md:h-[400px] w-full"
+          class=" rounded-xl object-cover h-full max-h-[400px] md:h-[400px] w-full"
         >
         <div class="relative text-[#A4A4A4] w-14 lg:w-28 bottom-8 lg:bottom-12 dark rounded-xl">
           {{index + 1}} / {{images.length}}

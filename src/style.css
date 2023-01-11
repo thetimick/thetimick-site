@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .row {
+      @apply px-4
+    }
+  .social-list {
+    @apply  p-2 sm:p-4 drop-shadow-icon bg-main relative z-10 rounded-full;
+  }
+  .social-list:hover .social-icon {
+    @apply h-7 w-7 sm:w-9 sm:h-9;
+  }
+  .social-icon {
+    @apply sm:w-7 duration-300 sm:h-7 fill-main w-5 h-5;
+  }
+  .logo {
+    animation: logo-rotation 5s infinite ;
+  }
+  @keyframes logo-rotation {
+    0% { transform:rotate(0deg)}
+    25% { transform:rotate(90deg)}
+    50% { transform:rotate(180deg)}
+    75% { transform:rotate(270deg)}
+    100% { transform:rotate(360deg)}
+  }
+}

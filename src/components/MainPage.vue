@@ -1,13 +1,13 @@
-<template >
-  <div class="min-h-screen h-1 ">
+<template>
+  <div class="h-mobile sm:min-h-screen  flex flex-col">
     <div class="absolute h-full w-full opacity-80 bg-main"></div>
     <img
         src="../assets/img/main-background.jpg"
         height="1080"
         width="1920"
-        class="absolute h-full w-full -z-10  object-cover"
+        class="absolute h-full w-full -z-10 object-cover"
     />
-    <header class="flex sm:px-16 relative justify-center sm:justify-start h-16 sm:h-24 items-center">
+    <header class="sticky top-0 flex sm:px-16 relative justify-center sm:justify-start h-16 sm:h-24 items-center">
       <div class="absolute left-0 h-full w-full bg-main drop-shadow-black opacity-50"></div>
       <div class="absolute left-0 h-full w-full bg-main blur-xl opacity-50"></div>
       <div class="flex items-center gap-5 z-10">
@@ -15,9 +15,9 @@
         <span class="text-2xl sm:text-4xl text-main font-bold">TheTimickRus</span>
       </div>
     </header>
-    <div class="container h-full mx-auto">
-      <div class="flex items-center h-full justify-center">
-        <div class="flex flex-col mb-16 gap-12">
+    <div class="container flex-1 flex justify-center mx-auto">
+      <div class="flex items-center justify-center">
+        <div class="flex flex-col mt-[60px] sm:mt-0 gap-12">
           <div class="flex flex-col gap-3">
             <div class="flex justify-center gap-3">
               <div class="relative drop-shadow-main rounded-full bg-main opacity-50 ">

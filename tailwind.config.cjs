@@ -18,6 +18,9 @@ module.exports = {
       },
       colors: {
         main: '#A4A4A4'
+      },
+      height: {
+        mobile: 'calc(100vh - 60px)',
       }
     },
   },

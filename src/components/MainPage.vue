@@ -1,5 +1,5 @@
-<template>
-  <div class="min-h-screen h-1 overflow-hidden">
+<template >
+  <div class="min-h-screen h-1 ">
     <div class="absolute h-full w-full opacity-80 bg-main"></div>
     <img
         src="../assets/img/main-background.jpg"

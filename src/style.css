@@ -2,22 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
 
 @layer components {
-    .row {
-      @apply px-4
-    }
-  .social-list {
-    @apply  p-2 sm:p-4 drop-shadow-icon bg-main relative z-10 rounded-full;
+  .row {
+    @apply px-4
   }
-  .social-list:hover .social-icon {
-    @apply h-7 w-7 sm:w-9 sm:h-9;
+  .social-circle {
+    @apply p-2 sm:p-4 drop-shadow-icon bg-main relative z-10 rounded-full duration-300;
+  }
+  .social-circle:hover  {
+    @apply scale-125
   }
   .social-icon {
-    @apply sm:w-7 duration-300 sm:h-7 fill-main w-5 h-5;
+    @apply sm:w-7  sm:h-7 fill-main w-5 h-5;
   }
   .logo {
-    animation: logo-rotation 5s infinite ;
+    animation: logo-rotation 5s infinite;
   }
   @keyframes logo-rotation {
     0% { transform:rotate(0deg)}

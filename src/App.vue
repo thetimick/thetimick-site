@@ -1,5 +1,5 @@
 <template>
-  <MainPage/>
+  <MainPage class="overflow-hidden"/>
 </template>
 
 

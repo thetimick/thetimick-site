@@ -7,6 +7,15 @@
 }
 
 @layer components {
+  /* Запрет копирования и выделения текста */
+  .unselectable {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
   .row {
     @apply px-4
   }
@@ -16,12 +25,28 @@
   .social-circle:hover  {
     @apply scale-125
   }
+
   .social-icon {
-    @apply sm:w-7  sm:h-7 fill-main w-5 h-5;
+    @apply duration-300 sm:w-7 sm:h-7 fill-main w-5 h-5;
   }
   .logo {
     animation: logo-rotation 5s infinite;
   }
+  .circle {
+    content: '';
+    position: absolute;
+    border: solid 3px #A4A4A4;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 90;
+    transition-duration: 250ms;
+    transition-property: width, height, opacity, background;
+    opacity: 0;
+  }
+
   @keyframes logo-rotation {
     0% { transform:rotate(0deg)}
     25% { transform:rotate(90deg)}

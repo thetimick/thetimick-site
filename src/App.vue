@@ -1,15 +1,12 @@
 <template>
-  <MainPage class="overflow-hidden"/>
+  <MainPage/>
 </template>
-
-
-
 
 <script>
  import MainPage from "./components/MainPage.vue";
 
  export default {
-   components: {MainPage},
+   components: { MainPage },
 
  }
 </script>

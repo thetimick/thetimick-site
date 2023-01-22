@@ -37,12 +37,12 @@
      c-4.1-21.6,0.5-42.7,2.5-64c0.1-1.6,1.7-3,2.6-4.6c0.7,1.5,1.8,3,2,4.6C30.8,239.6,32.5,253.8,34.3,268.1z"/>
     <path d="M14.2,268.1c-1.5,9.2-2.9,18.2-4.4,27.2c-0.1,0.8-1.4,1.5-2.1,2.2C7,296.7,6,296,5.8,295c-4-18.1-3.7-36.3,0-54.4
      c0.2-0.9,1.3-1.6,2-2.4c0.7,0.8,1.8,1.5,2,2.4C11.4,249.8,12.8,259,14.2,268.1z"/></g></svg>
-    <svg v-if="this.name === 'instagram'"  viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0.5" y="0.5" width="19" height="19" rx="4.5" stroke="#A4A4A4"/>
-      <circle cx="10" cy="10" r="4" stroke="#A4A4A4" stroke-width="2"/>
-      <circle cx="15.75" cy="4.25" r="0.75" fill="#A4A4A4"/>
+    <svg v-if="this.name === 'instagram'" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#A4A4A4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 15.5C13.933 15.5 15.5 13.933 15.5 12C15.5 10.067 13.933 8.5 12 8.5C10.067 8.5 8.5 10.067 8.5 12C8.5 13.933 10.067 15.5 12 15.5Z" stroke="#A4A4A4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17.6361 7H17.6477" stroke="#A4A4A4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <svg v-if="this.name === 'vk'" version="1.1"  id="Capa_1"  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+    <svg v-if="this.name === 'vk'"   id="Capa_1"  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
          viewBox="0 0 548.358 548.358" style="enable-background:new 0 0 548.358 548.358;"
          xml:space="preserve">
 <g>
@@ -79,7 +79,7 @@
 		C546.782,404.25,546.115,401.725,545.451,400.298z"/>
 </g>
 </svg>
-    <svg v-if="this.name === 'github'" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+    <svg v-if="this.name === 'github'"  id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
          viewBox="0 0 475.084 475.084" style="enable-background:new 0 0 475.084 475.084;"
          xml:space="preserve">
 <g>
@@ -131,7 +131,6 @@
 </template>
 
 <script>
-
 export default {
   name: "AppIcon",
   components: {},
@@ -164,8 +163,9 @@ export default {
 <style scoped>
 .app-icon svg {
   @apply w-full h-full;
-  & path {
-    @apply stroke-current;
-  }
+}
+
+.app-icon svg path {
+  @apply stroke-current;
 }
 </style>

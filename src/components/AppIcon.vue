@@ -164,8 +164,4 @@ export default {
 .app-icon svg {
   @apply w-full h-full;
 }
-
-.app-icon svg path {
-  @apply stroke-current;
-}
 </style>

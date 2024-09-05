@@ -15,7 +15,7 @@
       <div class="absolute left-0 h-full w-full bg-main blur-xl opacity-50"></div>
       <div id="logoAndTitle" class="flex items-center gap-5 z-10">
         <AppIcon name="logo" class="w-10 h-10 sm:w-16 sm:h-16 logo"/>
-        <span class="text-2xl sm:text-4xl text-main font-bold unselectable">TheTimickRus</span>
+        <span class="text-2xl sm:text-4xl text-main font-bold unselectable">the_timick</span>
       </div>
     </header>
     <div class="container flex-1 flex justify-center mx-auto">
@@ -32,17 +32,17 @@
             </div>
             <div class="flex flex-col text-center z-10 gap-3">
               <div class="sm:text-4xl text-2xl text-main font-bold unselectable display: block">
-                Андрей Тимофеев
+                Andrey Timofeev
               </div>
               <div class="text-main text-lg sm:text-2xl unselectable">
-                /* почти программист */
+                - mobile dev -
               </div>
             </div>
           </div>
           <div class="flex relative rounded-2xl items-center gap-4 sm:gap-12 p-4 sm:p-5">
             <div class="absolute rounded-xl left-0 h-full w-full bg-main drop-shadow-main opacity-50"></div>
             <div class="absolute rounded-xl left-0 h-full w-full bg-main blur-xl opacity-50"></div>
-            <a href="https://www.instagram.com/thetimickrus/" target="_blank">
+            <a href="https://www.instagram.com/the_timick" target="_blank">
               <div class="social-circle">
                 <AppIcon
                   name="instagram"
@@ -50,7 +50,7 @@
                 />
               </div>
             </a>
-            <a id="firstIcon" href="https://vk.com/thetimickrus" target="_blank">
+            <a id="firstIcon" href="https://vk.com/the_timick" target="_blank">
               <div class="social-circle">
                 <AppIcon
                   name="vk"
@@ -58,7 +58,7 @@
                 />
               </div>
             </a>
-            <a href="https://github.com/TheTimickRus" target="_blank">
+            <a href="https://github.com/thetimick" target="_blank">
               <div class="social-circle">
                 <AppIcon
                   name="github"
@@ -66,7 +66,7 @@
                 />
               </div>
             </a>
-            <a href="https://t.me/TheTimickRus" target="_blank">
+            <a href="https://t.me/the_timick" target="_blank">
               <div class="social-circle">
                 <AppIcon
                   name="telegram"
